@@ -1,0 +1,263 @@
+@import '~normalize.css/normalize.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import './variables.css';
+@import './reset.css';
+
+@import './spacing.css';
+@import './typo.css';
+@import './color.css';
+@import './animate.css';
+
+@import './modal.css';
+@import './grid.css';
+@import './form.css';
+@import './generic.css';
+@import './carousel.css';
+@import './toast.css';
+@import './Tabs/support.css';
+
+#__next {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  height: 56px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.printable {
+  display: none !important;
+}
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-blue-dark);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: calc(100% - var(--header-height));
+  background-color: var(--color-grey-dark);
+  cursor: pointer;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+.sidebar .active {
+  background-color: grey;
+}
+
+.sidebar-alert-dot {
+  color: #000;
+  background-color: #ffeb00;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -10px;
+  font-size: x-small;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1400px;
+  flex-direction: column;
+  width: calc(100% - var(--sidebar-width));
+  height: calc(100% - var(--header-height));
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: var(--container-padding);
+}
+
+.box {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+  background-color: var(--color-grey);
+}
+
+.box > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.fast-sale-container {
+  flex-basis: 100px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Step Payment */
+.step-payment {
+  animation-name: slideUp;
+  animation-duration: 0.2s;
+}
+
+.input.amount {
+  font-size: var(--font-lg);
+  font-weight: bold;
+  text-align: right;
+}
+
+.amount-msg {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.step-payment .cart {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step-payment .cart-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cart-summary {
+  flex-basis: 100px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Customer */
+.initials {
+  background-color: var(--color-grey-dark);
+  color: #fff;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.suggestion {
+  display: flex;
+}
+
+/* Parked Sale */
+.parked {
+  width: 500px;
+}
+
+/* Orders */
+.order.active,
+.item.active {
+  border-left: 4px solid var(--color-orange);
+  background-color: rgba(245, 139, 41, 0.2) !important;
+}
+
+.order.sync-error {
+  border-left: 2px solid var(--color-red);
+}
+
+.orders,
+.order-details,
+.items,
+.item-details {
+  overflow-y: auto;
+  flex-basis: 100px !important;
+}
+
+.dash {
+  border-top: 1px dashed black;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 var(--dimen-xs);
+  background-color: var(--color-green);
+  color: #fff;
+  border-radius: 2px;
+  font-size: var(--font-xs);
+}
+
+.tag.tag-generated,
+.tag.tag-retry,
+.tag.tag-pending_retry {
+  background-color: var(--color-blue);
+}
+
+.tag.tag-ready_to_ship {
+  background-color: var(--color-yellow);
+}
+
+.tag.tag-dispatched {
+  background-color: var(--color-blue-dark);
+}
+
+.tag.danger,
+.tag.tag-cancelled,
+.tag.tag-rto {
+  background-color: var(--color-red);
+}
+
+.returned {
+  background-color: rgba(243, 89, 88, 0.3);
+}
+
+@media print {
+  #__next {
+    display: none !important;
+  }
+
+  @page {
+    /* margin: 0.3cm; */
+    /* margin-top: 0.5cm; */
+  }
+
+  .printable {
+    display: block !important;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+  }
+}

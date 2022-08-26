@@ -1,0 +1,341 @@
+.btn {
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  /* letter-spacing: 1.6px; */
+  transition: all 0.2s;
+  color: var(--btn-color-text);
+  background-position: center;
+  background-color: var(--btn-color-bg);
+  border: 1px solid var(--btn-color-bd);
+  padding: var(--dimen-sm) var(--dimen-sm);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-grey);
+  border-color: var(--color-grey);
+}
+
+.btn:disabled:hover {
+  background: var(--color-grey);
+}
+
+.btn:hover {
+  background: var(--btn-color-bg-hover)
+    radial-gradient(circle, transparent 1%, var(--btn-color-bg-hover) 1%)
+    center/15000%;
+}
+
+.btn:active {
+  background-size: 100%;
+  transition: background 0s;
+  background-color: var(--btn-color-bg);
+}
+
+.btn-sm {
+  font-size: var(--font-sm);
+  padding: var(--dimen-xs) var(--dimen-sm);
+}
+
+.btn-xs {
+  font-size: var(--font-xs);
+  padding: var(--dimen-xs);
+}
+
+.btn-lg {
+  padding: var(--dimen-md) var(--dimen-lg);
+}
+
+.btn-orange {
+  --btn-color-text: var(--color-white);
+  --btn-color-bg: var(--color-orange);
+  --btn-color-bd: var(--color-orange);
+  --btn-color-bg-hover: var(--color-orange-dark);
+}
+
+.btn-green {
+  --btn-color-text: var(--color-white);
+  --btn-color-bg: var(--color-green);
+  --btn-color-bd: var(--color-green);
+  --btn-color-bg-hover: var(--color-green-dark);
+}
+
+.btn-red {
+  --btn-color-text: var(--color-white);
+  --btn-color-bg: var(--color-red);
+  --btn-color-bd: var(--color-red);
+  --btn-color-bg-hover: var(--color-red-dark);
+}
+
+.btn-yellow {
+  --btn-color-text: var(--color-black);
+  --btn-color-bg: var(--color-yellow);
+  --btn-color-bd: var(--color-yellow);
+  --btn-color-bg-hover: var(--color-yellow-dark);
+}
+
+.btn-blue-dark {
+  --btn-color-text: var(--color-white);
+  --btn-color-bg: var(--color-blue-dark);
+  --btn-color-bd: var(--color-blue-dark);
+  --btn-color-bg-hover: var(--color-blue-dark);
+}
+
+.btn-black {
+  --btn-color-text: var(--color-white);
+  --btn-color-bg: var(--color-black);
+  --btn-color-bd: var(--color-black);
+  --btn-color-bg-hover: var(--color-grey-dark);
+}
+
+.btn-bordered {
+  --btn-color-bd: var(--btn-color-bg);
+  background-color: transparent;
+}
+
+.label {
+  /*font-weight: 500;*/
+  margin-bottom: 10px;
+  font-size: 0.787rem;
+  /* letter-spacing: 1px; */
+  display: inline-block;
+  /* text-transform: uppercase; */
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group > .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-size: 15px;
+}
+
+.input-group-prepend {
+  position: absolute;
+  padding: var(--dimen-md);
+  font-size: var(--font-sm);
+  border: 1px solid transparent;
+}
+
+.input {
+  width: 100%;
+  letter-spacing: normal;
+  font-size: var(--font-sm);
+  background-color: transparent;
+  border: 1px solid var(--color-grey);
+  padding: var(--dimen-md);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input.input-sm {
+  padding: var(--dimen-sm);
+}
+
+.input.input-xs {
+  font-size: var(--font-xs);
+  padding: var(--dimen-xs) var(--dimen-sm);
+}
+
+textarea.input {
+  line-height: var(--line-height);
+}
+
+.input:disabled {
+  background-color: var(--color-grey-light);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--color-grey);
+}
+
+.input-group > .input {
+  padding-left: 50px;
+}
+
+.error {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--color-error);
+  margin-top: var(--dimen-xs);
+}
+
+.radio,
+.checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  position: relative;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.radio input,
+.checkbox input {
+  display: none;
+}
+
+.radio .indicator,
+.checkbox .indicator {
+  top: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  background: #ccc;
+  display: inline-block;
+}
+
+.radio .indicator {
+  border-radius: 50%;
+}
+
+.radio input:checked ~ .indicator {
+  background-color: #fff;
+  border: 5px solid #494949;
+}
+
+.checkbox .indicator::after {
+  top: 1px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  content: '';
+  display: none;
+  position: absolute;
+  border: solid #fff;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+
+.checkbox input:checked ~ .indicator {
+  background-color: #494949;
+}
+
+.checkbox input:checked ~ .indicator::after {
+  display: block;
+  background-color: #494949;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch > .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch > .slider:before {
+  position: absolute;
+  content: '';
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch > input:checked + .slider {
+  background-color: var(--color-blue);
+}
+
+.switch > input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-blue);
+}
+
+.switch > input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.switch > .slider.round {
+  border-radius: 34px;
+}
+
+.switch > .slider.round:before {
+  border-radius: 50%;
+}
+
+.btn-group {
+  --btn-color-text: var(--color-black);
+  --btn-color-bg: var(--color-white);
+}
+
+.btn-group {
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid var(--btn-group-color-bd);
+  /*border-radius: 5px 5px;*/
+}
+
+.btn-group button {
+  border: none;
+  background-color: transparent;
+  color: var(--btn-group-color-text);
+  cursor: pointer;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: 1px solid var(--btn-group-color-bd);
+}
+
+.btn-group button.active {
+  background-color: var(--btn-group-color-bd);
+  color: var(--btn-group-color-text-active);
+}
+
+.btn-group-orange {
+  --btn-group-color-bd: var(--color-orange);
+  --btn-color-text: var(--color-white);
+  --btn-color-text-active: var(--color-white);
+}
+
+.btn-group .btn:first-child {
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.btn-group .btn:last-child {
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.btn-group .btn:hover {
+  background: transparent;
+}
+
+.btn-bordered-default {
+  --btn-color-bd: var(--color-grey);
+}

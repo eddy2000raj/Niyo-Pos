@@ -1,0 +1,61 @@
+.carousel,
+.carousel-holder {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+.carousel-holder {
+  position: relative;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #ffeb00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  left: auto;
+  right: auto;
+  z-index: 100;
+  background-color: #ffeb00;
+}
+.carousel-arrow.carousel-arrow-left {
+  left: 25px;
+}
+.carousel-arrow.carousel-arrow-right {
+  right: 25px;
+}
+
+.carousel-arrow:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.carousel-arrow.disabled {
+  background-color: #eee;
+  border-color: #eee;
+  color: #aaa;
+}
+.carousel-arrow.disabled:hover {
+  cursor: not-allowed;
+}
+.carousel-slides {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-slides .carousel-slide {
+  display: none;
+}
+.carousel-slides .carousel-slide.active {
+  display: block;
+}

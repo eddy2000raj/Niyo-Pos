@@ -1,0 +1,96 @@
+.rel {
+  position: relative;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hr {
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-color: var(--color-grey);
+}
+
+.bd {
+  border: 1px solid var(--color-grey);
+}
+
+.hr.dark,
+.bd.dark {
+  border-color: var(--color-grey);
+}
+
+.hr.light {
+  border-color: var(--color-grey-light);
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list-normal li {
+  margin-left: 20px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-vh {
+  height: 100vh;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-light);
+}
+
+.dd {
+  top: 0;
+  z-index: 5;
+  width: max-content;
+  position: absolute;
+  background-color: #fff;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.dd::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  top: -8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+/* for printer margin set */
+@page  
+{ 
+    size: auto;   /* auto is the initial value */ 
+    /* this affects the margin in the printer settings */ 
+    margin: 5mm;  
+}
