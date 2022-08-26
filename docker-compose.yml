@@ -1,0 +1,43 @@
+version: '3'
+services:
+  pos-nodeserver:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: pos-nodeserver
+    ports:
+      - '3000:3000'
+      - '9005:9005'
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    networks:
+      - niyopos_default
+      - niyoos_niyoos_default
+
+  pos-webserver:
+    container_name: pos-webserver
+    image: nginx:latest
+    ports:
+      - '8080:80'
+      - '443:443'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - niyopos_default
+      - niyoos_niyoos_default
+
+networks:
+  niyopos_default: # this network (app1)
+    driver: bridge
+  niyoos_niyoos_default: # external network (app2)
+    external: true
+  #         - ./data/certbot/conf:/etc/letsencrypt
+  #         - ./data/certbot/www:/var/www/certbot
+  # # certbot:
+  #     image: certbot/certbot
+  #     restart: unless-stopped
+  #     volumes:
+  #         - ./data/certbot/conf:/etc/letsencrypt
+  #         - ./data/certbot/www:/var/www/certbot
