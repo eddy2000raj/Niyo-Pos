@@ -1,0 +1,17 @@
+{
+    "lang": "en",
+    "name": "Niyo POS",
+    "short_name": "Niyo POS",
+    "icons": [
+        {
+            "src": "/images/logo.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#262d33",
+    "background_color": "#262d33",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "natural"
+}
